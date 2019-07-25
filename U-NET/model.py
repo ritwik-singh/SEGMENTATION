@@ -45,7 +45,25 @@ class UNet():
 		conv5 = Conv2D(1024,(3,3),activation='relu',padding='same')(pool4)
 		conv5 = Conv2D(1024,(3,3),activation='relu',padding='same')(conv5)
 
-		up_conv5 = UpSampling2D(size=(2,2))(conv5)
-		
+		up_conv6 = UpSampling2D(size=(2,2))(conv5)
+		conv6 = Conv2D(512,(3,3),activation='relu',padding='same')(up_conv6)
+		conv6 = Conv2D(512,(3,3),activation='relu',padding='same')(conv6)
+
+		up_conv7 = UpSampling2D(size=(2,2))(conv6)
+		conv6 = Conv2D(256,(3,3),activation='relu',padding='same')(up_conv7)
+		conv6 = Conv2D(256,(3,3),activation='relu',padding='same')(conv7)
+
+		up_conv8 = UpSampling2D(size=(2,2))(conv7)
+		conv8 = Conv2D(128,(3,3),activation='relu',padding='same')(up_conv8)
+		conv8 = Conv2D(128,(3,3),activation='relu',padding='same')(conv8)	
+
+
+		up_conv9 = UpSampling2D(size=(2,2))(conv8)
+		conv9 = Conv2D(64,(3,3),activation='relu',padding='same')(up_conv9)
+		conv9 = Conv2D(64,(3,3),activation='relu',padding='same')(conv9)
+
+
+
+
 
 
