@@ -1,7 +1,15 @@
 # SEGMENTATION
 ***
+
+## Installation
+    $ git clone https://github.com/ritwik-singh/SEGMENTATION
+    $ cd SEGMENTATION/
+    $ sudo pip3 install -r requirements.txt
+    
 ## Implementations 
+
 ### U-NET
+
 Implementation of U-NET Segmentation algorithm.
 ####
 [Code](U-NET/model.py)
