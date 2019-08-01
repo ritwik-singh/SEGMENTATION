@@ -21,3 +21,17 @@ Implementation of U-NET Segmentation algorithm.
 $ cd U-NET/
 $ python3 model.py
 ```
+
+### SEGNET
+
+Implementation of SEGNET Segmentation algorithm.
+####
+[Code](SEGNET/model.py)
+#####
+[Paper](SEGNET/1505.04597.pdf)
+
+#### Example
+```
+$ cd SEGNET/
+$ python3 model.py
+```
