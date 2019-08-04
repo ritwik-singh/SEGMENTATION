@@ -12,9 +12,7 @@
 
 Implementation of U-NET Segmentation algorithm.
 ####
-[Code](U-NET/model.py)
-#####
-[Paper](U-NET/1505.04597.pdf)
+[Code](U-NET/model.py)   [Paper](U-NET/1505.04597.pdf)
 
 #### Example
 ```
@@ -26,9 +24,7 @@ $ python3 model.py
 
 Implementation of SEGNET Segmentation algorithm.
 ####
-[Code](SEGNET/model.py)
-#####
-[Paper](SEGNET/1505.04597.pdf)
+[Code](SEGNET/model.py)     [Paper](SEGNET/1511.00561.pdf)
 
 #### Example
 ```
