@@ -2,7 +2,7 @@
 
  * @author [Ritwik Singh]
  * @created date 2019-08-01 12:45:15
- * @modified date 2019-08-04 13:14:58
+ * @modified date 2019-08-04 15:11:45
  * @desc [description]
 
 '''
@@ -138,7 +138,15 @@ class SegNet():
 		conv26 = BatchNormalization()(conv26)
 		conv26 = Activation("relu")(conv26)	
 
-		
+		conv27 = Conv2D(n_labels,(1,1),padding = "valid")(conv26)
+		conv27 = BatchNormalization()(conv27)
+		conv27 = Reshape((input_shape[0]*input_shape[1], n_labels),
+            input_shape=(input_shape[0], input_shape[1], n_labels))(conv27)
 
+        outputs = Activation("softmax")(conv27)    
+
+        model = Model(inputs=inputs, outputs=outputs, name="SegNet")
+
+        return model 
 
 
