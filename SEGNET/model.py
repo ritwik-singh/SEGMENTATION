@@ -2,7 +2,7 @@
 
  * @author [Ritwik Singh]
  * @created date 2019-08-01 12:45:15
- * @modified date 2019-08-04 13:04:15
+ * @modified date 2019-08-04 13:14:58
  * @desc [description]
 
 '''
@@ -106,19 +106,39 @@ class SegNet():
 		conv18 = Conv2D(512,(3,3),padding="same")(conv17)
 		conv18 = BatchNormalization()(conv18)
 		conv18 = Activation("relu")(conv18)
-		conv19 = Conv2D(512,(3,3),padding="same")(conv18)
+		conv19 = Conv2D(256,(3,3),padding="same")(conv18)
 		conv19 = BatchNormalization()(conv19)
 		conv19 = Activation("relu")(conv19)
 
 
 		unpool3 = MaxUnpooling2D((2,2))([conv19,mask3])
-		conv20 = Conv2D(512,(3,3),padding="same")(unpool3)
+		conv20 = Conv2D(256,(3,3),padding="same")(unpool3)
 		conv20 = BatchNormalization()(conv20)
 		conv20 = Activation("relu")(conv20)
-		conv21 = Conv2D(512,(3,3),padding="same")(conv21)
+		conv21 = Conv2D(256,(3,3),padding="same")(conv21)
 		conv21 = BatchNormalization()(conv21)
 		conv21 = Activation("relu")(conv21)
-		conv22 = Conv2D(512,(3,3),padding="same")(conv22)
+		conv22 = Conv2D(128,(3,3),padding="same")(conv22)
 		conv22 = BatchNormalization()(conv22)
 		conv22 = Activation("relu")(conv22)
+
+		unpool4 = MaxUnpooling2D((2,2))([conv20,mask2])
+		conv23 = Conv2D(128,(3,3),padding="same")(unpool4)
+		conv23 = BatchNormalization()(conv23)
+		conv23 = Activation("relu")(conv23)
+		conv24 = Conv2D(64,(3,3),padding="same")(conv23)
+		conv24 = BatchNormalization()(conv24)
+		conv24 = Activation("relu")(conv24)	
+
+		unpool5 = MaxUnpooling2D((2,2))([conv24,mask1])
+		conv25 = Conv2D(64,(3,3),padding="same")(unpool5)
+		conv25 = BatchNormalization()(conv25)
+		conv25 = Activation("relu")(conv25)
+		conv26 = Conv2D(64,(3,3),padding="same")(conv25)
+		conv26 = BatchNormalization()(conv26)
+		conv26 = Activation("relu")(conv26)	
+
+		
+
+
 
