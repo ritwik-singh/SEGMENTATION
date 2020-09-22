@@ -1,5 +1,5 @@
 # SEGMENTATION
-***
+
 
 ## Installation
     $ git clone https://github.com/ritwik-singh/SEGMENTATION
